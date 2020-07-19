@@ -31,3 +31,7 @@ I didn't do extensive unit tests, if you can spot error, or have suggestions for
 ## License
 
 This project is licensed under the MIT License
+
+## Acknowledgments
+
+* The idea an basic starting codes taken from [learncpp](https://learncpp.com)
