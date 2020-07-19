@@ -13,18 +13,19 @@ int main() {
 	//blackjack::test_get_card_value();
 	//// end of test functions
 
-	// initialize deck with order
-	std::vector<blackjack::Card> deck;
-	for (int i = 2; i < static_cast<int>(blackjack::CardRanks::max_ranks); ++i) {
-		for (int j = 0; j < static_cast<int>(blackjack::CardSuits::max_suits); ++j) {
-			deck.push_back(blackjack::Card{ static_cast<blackjack::CardRanks>(i),\
-												static_cast<blackjack::CardSuits>(j) });
-		}
-	}
-
 	std::string new_play{ "" };
 	do {
 		int cur_play_end{ 0 };
+
+		// initialize deck with order
+		std::vector<blackjack::Card> deck;
+		for (int i = 2; i < static_cast<int>(blackjack::CardRanks::max_ranks); ++i) {
+			for (int j = 0; j < static_cast<int>(blackjack::CardSuits::max_suits); ++j) {
+				deck.push_back(blackjack::Card{ static_cast<blackjack::CardRanks>(i),\
+													static_cast<blackjack::CardSuits>(j) });
+			}
+		}
+
 		blackjack::shuffle_deck(deck);  // at the start of the game make sure to shuffle
 		blackjack::Dealer dealer(deck);
 		blackjack::Client client(deck);
